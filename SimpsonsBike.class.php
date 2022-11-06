@@ -24,7 +24,7 @@ public function start(): string{
 	
 }
 
-public function Forward(): string{
+public function bikeForward(): string{
 		
 	$this->currentSpeed = 20 ;
 	return '<mark>' . "On accelere à " . $this->currentSpeed . "Km/h" . '</mark>' . "<br>";

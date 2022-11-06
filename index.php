@@ -21,7 +21,7 @@
 	echo "<br>";
 	var_dump($homerCar);
 	echo "<br>";
-	echo $homerCar->forward();
+	echo $homerCar->carForward();
 	echo "<br>";
 	var_dump($homerCar);
 	echo "<br>";
@@ -45,7 +45,7 @@
 	echo "<br>";
 	var_dump($BartBike);
 	echo "<br>";
-	echo $BartBike->forward();
+	echo $BartBike->bikeForward();
 	echo "<br>";
 	var_dump($BartBike);
 	echo "<br>";
@@ -68,7 +68,7 @@
 	echo "<br>";
 	var_dump($krustyCar);
 	echo "<br>";
-	echo $krustyCar->forward();
+	echo $krustyCar->carForward();
 	echo "<br>";
 	var_dump($krustyCar);
 	echo "<br>";
