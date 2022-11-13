@@ -1,6 +1,6 @@
 <?php
 
-class vehicle{
+abstract class vehicle{
 	private int $nbWheels;
 	private int $currentSpeed;
 	protected string $color;

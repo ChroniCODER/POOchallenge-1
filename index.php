@@ -8,13 +8,27 @@
 </head>
 <body>
 
+<?php
+//tout mes REQUIRE
+require 'SimpsonsTruck.class.php';
+require 'SimpsonsCar.class.php';
+require 'SimpsonsBike.class.php';
+require 'SimpsonsSkate.class.php';
+
+require 'MotorWay.class.php';
+require 'ResidentialWay.class.php';
+require 'PedestrianWay.class.php';
+
+?>
+
+
+
 <h2> camion challenge 2 classe enfant </h2>
 
 <h3>Premiere instance, truck1 = noir, 3 places,6 roues, fonctionne au fuel, remplit à 100%</h3>
 
 <?php
-	require 'SimpsonsTruck.class.php';
-
+	
 	$truck1 = new SimpsonsTruck('black', 3, 'fuel', 1200);
 	$truck1->setNbWheels(6);
 	$truck1->setCurrentSpeed(0);
@@ -72,14 +86,15 @@
 	echo $truck3->brake();
 	echo "<br>";
 	var_dump($truck3);
-die;
+
 ?>
 
 
 <h1>test de la voiture d'homer</h1>
 
 <?php
-	require 'SimpsonsCar.class.php';
+	
+
 
 	$homerCar = new SimpsonsCar('pink', 5, 'oil', 50);
 	$homerCar->setNbWheels(4);
@@ -104,7 +119,7 @@ die;
 
 <?php
 
-	require 'SimpsonsBike.class.php';
+	
 
 	$BartBike = new SimpsonsBike('red', 1, 'manual', 1000);
 	$BartBike->setNbWheels(2);
@@ -149,8 +164,79 @@ die;
 
 <?php
 
+?>
+
+<h1> ACCES A MOTORWAY </h1>
+
+<?php
+	
+	$motorwayTest = new MotorWay(4, 130);
+	
+	echo "test d'acces à la motorway par \$homerCar";
+	echo "<br>";
+	echo $motorwayTest->addVehicle($homerCar);
+	echo "<br>";
+
+	echo "test d'acces à la motorway par \$BartBike";
+	echo "<br>";
+	echo $motorwayTest->addVehicle($BartBike);
+	echo "<br>";
 
 ?>
+
+<h1> ACCES A RESIDENTIALWAY </h1>
+
+<?php
 	
+	$ResidentialWayTest = new ResidentialWay(2, 50);
+	
+	echo "test d'acces à la ResidentialWay par \$homerCar";
+	echo "<br>";
+	echo $ResidentialWayTest->addVehicle($homerCar);
+	echo "<br>";
+
+	echo "test d'acces à la ResidentialWay par \$BartBike";
+	echo "<br>";
+	echo $ResidentialWayTest->addVehicle($BartBike);
+	echo "<br>";
+
+	echo "test d'acces à la ResidentialWay par \$truck1";
+	echo "<br>";
+	echo $ResidentialWayTest->addVehicle($truck1);
+	echo "<br>";
+
+?>
+
+<h1> ACCES A PEDESTRIANWAY </h1>
+
+<?php
+	
+	$PedestrianWayTest = new PedestrianWay(1, 30);
+	
+	echo "test d'acces à la PedestrianWay par \$homerCar";
+	echo "<br>";
+	echo $PedestrianWayTest->addVehicle($homerCar);
+	echo "<br>";
+
+	echo "test d'acces à la PedestrianWay par \$BartBike";
+	echo "<br>";
+	echo $PedestrianWayTest->addVehicle($BartBike);
+	echo "<br>";
+
+	echo "test d'acces à la PedestrianWay par \$truck1";
+	echo "<br>";
+	echo $PedestrianWayTest->addVehicle($truck1);
+	echo "<br>";
+
+	$BartSkate = new SimpsonsSkate('green',1 ,'manual', 0 );
+	$BartSkate->setNbWheels(4);
+	$BartSkate->setCurrentSpeed(0);
+
+	echo "test d'acces à la PedestrianWay par \$BartSkate";
+	echo "<br>";
+	echo $PedestrianWayTest->addVehicle($BartSkate);
+	echo "<br>";
+
+?>
 </body>
 </html>
